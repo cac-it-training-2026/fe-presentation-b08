@@ -117,6 +117,12 @@ body {
   width: fit-content;
 
 }
+/*表を横並びに*/
+.table-group {
+    display: flex;
+    gap: 20px; /* テーブル間の余白 */
+    align-items: flex-start;
+}
 
 
 
@@ -128,5 +134,7 @@ table {
 th, td {
   border: 1px solid gray;
 }
+
+
 
 
