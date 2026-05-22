@@ -25,13 +25,13 @@
                 </label>
             </form>
 
-            <details class="quiz-answer">
+            <details class="quiz-answer" id="answer-box">
                 <summary>解答と解説を見る</summary>
                 <div class="answer-content">
                     <p class="correct-answer">
                         <strong>正解：2. 主キーの一部だけに依存する列を分離し、部分関数従属をなくすこと</strong>
                     </p>
-                    <classs="explanation">
+                    <div class="explanation">
                         <strong>解説：</strong><br/>
                         第2正規化とは第1正規化された表から、部分関数従属している列が切り出されたものです。<br/>
                         部分関数従属とは、複合主キーの一部だけで他の項目が決まってしまう関係のことです。<br/>
@@ -73,4 +73,22 @@ function next() {
   localStorage.setItem("score", score);
 
 }
+
+
+const answerBox = document.getElementById("answer-box");
+const radios = document.querySelectorAll('input[name="q1"]');
+
+
+answerBox.querySelector("summary").addEventListener("click", function (e) {
+
+  const checked = document.querySelector('input[name="q1"]:checked');
+
+  if (!checked) {
+    e.preventDefault(); // ← detailsが開くのを止める
+    alert("先に選択肢を選んでください！");
+  }
+
+});
+
 </script>
+
