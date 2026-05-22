@@ -53,7 +53,7 @@
                 </label>
             </form>
 
-            <details class="quiz-answer">
+            <details class="quiz-answer"　id="answer-box">
                 <summary>解答と解説を見る</summary>
                 <div class="answer-content">
                     <p class="correct-answer">
@@ -80,10 +80,6 @@ function next() {
   // 選択されたものを取得
   let selected = document.querySelector('input[name="q1"]:checked');
 
-  if (!selected) {
-    alert("選択してください");
-    return;
-  }
 
   // 今のスコア取得
   let score = Number(localStorage.getItem("score")) || 0;
@@ -96,4 +92,19 @@ function next() {
   localStorage.setItem("score", score);
 
 }
+
+const answerBox = document.getElementById("answer-box");
+const radios = document.querySelectorAll('input[name="q1"]');
+
+
+answerBox.querySelector("summary").addEventListener("click", function (e) {
+
+  const checked = document.querySelector('input[name="q1"]:checked');
+
+  if (!checked) {
+    e.preventDefault(); 
+    alert("先に選択肢を選んでください！");
+  }
+
+});
 </script>

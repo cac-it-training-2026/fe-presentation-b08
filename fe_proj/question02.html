@@ -51,10 +51,8 @@ function next() {
   // 選択されたものを取得
   let selected = document.querySelector('input[name="q1"]:checked');
 
-  if (!selected) {
-    alert("選択してください");
-    return;
-  }
+ 
+  
 
   // 今のスコア取得
   let score = Number(localStorage.getItem("score")) || 0;
@@ -77,7 +75,7 @@ answerBox.querySelector("summary").addEventListener("click", function (e) {
   const checked = document.querySelector('input[name="q1"]:checked');
 
   if (!checked) {
-    e.preventDefault(); // ← detailsが開くのを止める
+    e.preventDefault(); 
     alert("先に選択肢を選んでください！");
   }
 
