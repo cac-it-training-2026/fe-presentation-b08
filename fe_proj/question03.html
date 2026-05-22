@@ -48,3 +48,27 @@
         </div>
     </body>
 </html>
+
+<script>
+function next() {
+	
+  // 選択されたものを取得
+  let selected = document.querySelector('input[name="q1"]:checked');
+
+  if (!selected) {
+    alert("選択してください");
+    return;
+  }
+
+  // 今のスコア取得
+  let score = Number(localStorage.getItem("score")) || 0;
+
+  // 正解なら加算（value=1を正解にしてる）
+  if (selected.value === "2") {
+    score++;
+  }
+  
+  localStorage.setItem("score", score);
+
+}
+</script>
