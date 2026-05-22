@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>HTML/CSS 4択問題</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h3 class="quiz-question">問題1:次のうち、第2正規化(2NF)の説明として正しいものはどれか</h3>
+
+            <form class="quiz-options">
+                <label>
+                    <input type="radio" name="q1" value="1" /> 1. 1つのセルに複数の値を持たせないようにすること
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="2" /> 2. 主キーの一部だけに依存する列を分離し、部分関数従属をなくすこと
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="3" /> 3. 主キー以外の列同士の依存関係をなくすこと
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="4" /> 4. データをすべて1つのテーブルにまとめること
+                </label>
+            </form>
+
+            <details class="quiz-answer">
+                <summary>解答と解説を見る</summary>
+                <div class="answer-content">
+                    <p class="correct-answer">
+                        <strong>正解：2. 主キーの一部だけに依存する列を分離し、部分関数従属をなくすこと</strong>
+                    </p>
+                    <p class="explanation">
+                        <strong>解説：</strong><br/>
+                        第2正規化とは第1正規化された表から、部分関数従属している列が切り出されたものです。
+                        
+                    </p>
+                </div>
+            </details>
+        </div>
+        <a href="question01.html">次の問題へ</a>
+        
+    </body>
+</html>
