@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="result"></p>
+</body>
+</html>
+
+
+<script>
+let score = localStorage.getItem("score");
+document.getElementById("result").textContent =
+  "正解数：" + score;
+</script>
