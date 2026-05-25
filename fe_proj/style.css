@@ -95,7 +95,46 @@ body {
     margin-top: 0;
 }
 
+
 .explanation {
     margin-bottom: 0;
     line-height: 1.6;
 }
+
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+  
+  display: block;
+  margin-left: auto;
+  width: fit-content;
+
+}
+/*表を横並びに*/
+.table-group {
+    display: flex;
+    gap: 20px; /* テーブル間の余白 */
+    align-items: flex-start;
+}
+
+
+
+table {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid gray;
+}
+
+
+
+

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>DBの正規化 4択問題</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="quiz-container">
+			
+			
+			
+            <h3 class="quiz-question">問題3: 次のテーブルを第3正規形にする場合、適切な分割はどれ？</h3>
+ 							   <table>
+					   <tr>
+						   <th>注文ID</th>
+						   <th>商品ID</th>
+						   <th>商品名</th>
+						   <th>カテゴリ</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>101</th>
+						   <th>ショートケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>102</th>
+						   <th>チーズケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+					    <tr>
+						   <th>2</th>
+						   <th>103</th>
+						   <th>クッキー</th>
+						   <th>焼き菓子</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>101</th>
+						   <th>ショートケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+				   </table>
+				   
+			
+ 
+            <form class="quiz-options" >
+                <label>
+                    <input type="radio" name="q1" value="1" /> 1. 分割不要
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="2" />2.
+                      <div class="table-group">
+						  
+                    <table>
+						<tr>
+						   <th>注文ID</th>
+						   <th>商品ID</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>101</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>102</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>103</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>101</th>
+					   </tr>
+					</table>
+					<table>
+						<tr>
+						   <th>商品ID</th>
+						   <th>商品名</th>
+						   <th>カテゴリ</th>
+					   </tr>
+					   <tr>
+						   <th>101</th>
+						   <th>ショートケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>102</th>
+						   <th>チーズケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>103</th>
+						   <th>クッキー</th>
+						   <th>焼き菓子</th>
+					   </tr>
+					</table>
+                      </div>
+                </label>
+                
+                <label>
+                    <input type="radio" name="q1" value="3" />3.
+                     <div class="table-group">
+                    <table>
+						<tr>
+						   <th>注文ID</th>
+						   <th>商品ID</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>101</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>102</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>103</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>101</th>
+					   </tr>
+					</table>
+					
+					<table>
+						<tr>
+							<th>商品ID</th>
+							<th>商品名</th>
+							<th>カテゴリID</th>
+						</tr>
+						<tr>
+						   <th>101</th>
+						   <th>ショートケーキ</th>
+						   <th>1</th>
+					   </tr>
+					   <tr>
+						   <th>102</th>
+						   <th>チーズケーキ</th>
+						   <th>1</th>
+					   </tr>
+					   <tr>
+						   <th>103</th>
+						   <th>クッキー</th>
+						   <th>2</th>
+					   </tr>
+						
+					</table>
+					<table>
+						<tr>
+						   <th>カテゴリID</th>
+						   <th>カテゴリ</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>焼き菓子</th>
+					   </tr>
+					</table>
+					 </div>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="4" />4.
+                    <div class="table-group">
+						<table>
+						<tr>
+						   <th>注文ID</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+					   </tr>
+					</table>
+					
+					<table>
+						<tr>
+							<th>商品ID</th>
+							<th>商品名</th>
+							<th>カテゴリ</th>
+						</tr>
+						<tr>
+						   <th>101</th>
+						   <th>ショートケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>102</th>
+						   <th>チーズケーキ</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>103</th>
+						   <th>クッキー</th>
+						   <th>焼き菓子</th>
+					   </tr>
+						
+					</table>
+				</div>
+                </label>
+            </form>
+
+            <details class="quiz-answer" id="answer-box">
+                <summary>解答と解説を見る</summary>
+                <div class="answer-content">
+                    <p class="correct-answer">
+                        <strong>正解：3.</strong>
+                    </p>
+                    <p class="explanation">
+                        <strong>解説：</strong><br />
+                      
+   						第3正規化とは、第2正規化まで行ったレコードにおいて、主キー以外でキーとして特定できる列の情報を別のテーブルに分けることを指します。<br/>
+   						選択肢2は、カテゴリを独立させていないため、同じカテゴリが繰り返し保存されてしまいます。<br/>
+   						選択肢4は、注文IDと商品IDの関係が消えてしまっています。<br/>
+   						選択肢3のように情報のまとまりごとに分割することで、第三正規形の適切な構造になります。<br/>
+                    </p>
+                      <a href="Final.html" class="btn" button onclick="next()">正答数</a>
+                </div>
+            </details>
+        </div>
+    </body>
+</html>
+
+<script>
+function next() {
+	
+  // 選択されたものを取得
+  let selected = document.querySelector('input[name="q1"]:checked');
+
+
+  // 今のスコア取得
+  let score = Number(localStorage.getItem("score")) || 0;
+
+  // 正解なら加算
+  if (selected.value === "3") {
+    score++;
+  }else{
+	  
+  }
+  
+  localStorage.setItem("score", score);
+
+}
+
+const answerBox = document.getElementById("answer-box");
+const radios = document.querySelectorAll('input[name="q1"]');
+
+
+answerBox.querySelector("summary").addEventListener("click", function (e) {
+
+  const checked = document.querySelector('input[name="q1"]:checked');
+
+  if (!checked) {
+    e.preventDefault(); 
+    alert("先に選択肢を選んでください！");
+  }
+
+});
+</script>

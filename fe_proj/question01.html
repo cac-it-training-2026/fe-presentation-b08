@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>DBの正規化 4択問題</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+		
+        <div class="quiz-container">
+            <h3 class="quiz-question">問題1:次のうち、第2正規化(2NF)の説明として正しいものはどれか?</h3>
+
+            <form class="quiz-options">
+                <label>
+                    <input type="radio" name="q1" value="1" /> 1. 1つのセルに複数の値を持たせないようにすること
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="2" /> 2.複数列の組み合わせが主キーとなっているレコードに対して、 主キーに含まれる列単体で特定できる情報ごとにレコードを分けること
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="3" /> 3. 主キー以外の列同士の依存関係をなくすこと
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="4" /> 4. データをすべて1つのテーブルにまとめること
+                </label>
+            </form>
+
+            <details class="quiz-answer" id="answer-box">
+                <summary>解答と解説を見る</summary>
+                <div class="answer-content">
+                    <p class="correct-answer">
+                        <strong>正解：2. 複数列の組み合わせが主キーとなっているレコードに対して、 主キーに含まれる列単体で特定できる情報ごとにレコードを分けること</strong>
+                    </p>
+                    <div class="explanation">
+                        <strong>解説：</strong><br/>
+                        第2正規化とは第1正規化された表から、主キーが複数項目で構成されている場合に、その一部だけに依存して決まるレコードを分けることを言います。<br/>
+                        これにより、データの重複や更新時の不整合を防ぎます。<br/>
+                        
+                        <a href="question02.html" class="btn" button onclick="next()">次の問題へ</a>
+                    </p>
+                </div>
+            </details>
+        </div>
+        
+        
+    </body>
+</html>
+
+<script>
+localStorage.setItem("score", 0);
+</script>
+
+
+<script>
+function next() {
+	
+  // 選択されたものを取得
+  let selected = document.querySelector('input[name="q1"]:checked');
+
+  
+  // 今のスコア取得
+  let score = Number(localStorage.getItem("score")) || 0;
+
+  // 正解なら加算（value=1を正解にしてる）
+  if (selected.value === "2") {
+    score++;
+  }
+  
+  localStorage.setItem("score", score);
+
+}
+
+
+const answerBox = document.getElementById("answer-box");
+const radios = document.querySelectorAll('input[name="q1"]');
+
+
+answerBox.querySelector("summary").addEventListener("click", function (e) {
+
+  const checked = document.querySelector('input[name="q1"]:checked');
+
+  if (!checked) {
+    e.preventDefault(); // ← detailsが開くのを止める
+    alert("先に選択肢を選んでください！");
+  }
+
+});
+
+</script>
+
