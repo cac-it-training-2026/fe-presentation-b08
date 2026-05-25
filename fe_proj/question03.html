@@ -131,6 +131,60 @@
 						<tr>
 							<th>商品ID</th>
 							<th>商品名</th>
+							<th>カテゴリID</th>
+						</tr>
+						<tr>
+						   <th>101</th>
+						   <th>ショートケーキ</th>
+						   <th>1</th>
+					   </tr>
+					   <tr>
+						   <th>102</th>
+						   <th>チーズケーキ</th>
+						   <th>1</th>
+					   </tr>
+					   <tr>
+						   <th>103</th>
+						   <th>クッキー</th>
+						   <th>2</th>
+					   </tr>
+						
+					</table>
+					<table>
+						<tr>
+						   <th>カテゴリID</th>
+						   <th>カテゴリ</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+						   <th>生菓子</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+						   <th>焼き菓子</th>
+					   </tr>
+					</table>
+					 </div>
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="4" />
+                    <div class="table-group">
+						<table>
+						<tr>
+						   <th>注文ID</th>
+					   </tr>
+					   <tr>
+						   <th>1</th>
+					   </tr>
+					   <tr>
+						   <th>2</th>
+					   </tr>
+					</table>
+					
+					<table>
+						<tr>
+							<th>商品ID</th>
+							<th>商品名</th>
 							<th>カテゴリ</th>
 						</tr>
 						<tr>
@@ -150,24 +204,7 @@
 					   </tr>
 						
 					</table>
-					<table>
-						<tr>
-						   <th>カテゴリ</th>
-						   <th>保管場所</th>
-					   </tr>
-					   <tr>
-						   <th>生菓子</th>
-						   <th>冷蔵庫</th>
-					   </tr>
-					   <tr>
-						   <th>焼き菓子</th>
-						   <th>保存棚</th>
-					   </tr>
-					</table>
-					 </div>
-                </label>
-                <label>
-                    <input type="radio" name="q1" value="4" /> 4. 商品(注文ID, 商品名)
+				</div>
                 </label>
             </form>
 
@@ -175,15 +212,15 @@
                 <summary>解答と解説を見る</summary>
                 <div class="answer-content">
                     <p class="correct-answer">
-                        <strong>正解：2. 注文(注文ID, 商品ID)、商品(商品ID, 商品名) に分割する</strong>
+                        <strong>正解：3.</strong>
                     </p>
                     <p class="explanation">
                         <strong>解説：</strong><br />
                       
-   						このテーブルでは「商品ID → 商品名」という関係があり、商品名は商品IDに依存して決まります。<br />
-    					さらに「注文ID → 商品ID」なので、「注文ID → 商品ID → 商品名」という推移的関数従属が発生しています。<br />
-    					第3正規形ではこのような「間接的に決まる属性」は排除する必要があります。<br />
-    					そのため、商品に関する情報（商品IDと商品名）は別テーブルに分けるのが正しい設計です。
+   						第3正規化とは、第2正規化まで行ったレコードにおいて、主キー以外でキーとして特定できる列の情報を別のテーブルに分けることを指します。<br/>
+   						選択肢2は、カテゴリを独立させていないため、同じカテゴリが繰り返し保存されてしまいます。<br/>
+   						選択肢4は、注文IDと商品IDの関係が消えてしまっています。<br/>
+   						選択肢3のように情報のまとまりごとに分割することで、第三正規形の適切な構造になります。<br/>
                     </p>
                       <a href="Final.html" class="btn" button onclick="next()">正答数</a>
                 </div>
@@ -202,8 +239,8 @@ function next() {
   // 今のスコア取得
   let score = Number(localStorage.getItem("score")) || 0;
 
-  // 正解なら加算（value=1を正解にしてる）
-  if (selected.value === "2") {
+  // 正解なら加算
+  if (selected.value === "3") {
     score++;
   }
   
