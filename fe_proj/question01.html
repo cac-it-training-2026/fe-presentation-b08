@@ -15,7 +15,7 @@
                     <input type="radio" name="q1" value="1" /> 1. 1つのセルに複数の値を持たせないようにすること
                 </label>
                 <label>
-                    <input type="radio" name="q1" value="2" /> 2. 主キーの一部だけに依存する列を分離し、部分関数従属をなくすこと
+                    <input type="radio" name="q1" value="2" /> 2.複数列の組み合わせが主キーとなっているレコードに対して、主キーに含まれる列単体で特定できる情報ごとにレコードを分けること
                 </label>
                 <label>
                     <input type="radio" name="q1" value="3" /> 3. 主キー以外の列同士の依存関係をなくすこと
@@ -29,12 +29,12 @@
                 <summary>解答と解説を見る</summary>
                 <div class="answer-content">
                     <p class="correct-answer">
-                        <strong>正解：2. 主キーの一部だけに依存する列を分離し、部分関数従属をなくすこと</strong>
+                        <strong>正解：2. 複数列の組み合わせが主キーとなっているレコードに対して、主キーに含まれる列単体で特定できる情報ごとにレコードを分けること</strong>
                     </p>
                     <div class="explanation">
                         <strong>解説：</strong><br/>
-                        第2正規化とは第1正規化された表から、部分関数従属している列が切り出されたものです。<br/>
-                        部分関数従属とは、複合主キーの一部だけで他の項目が決まってしまう関係のことです。<br/>
+                        第2正規化とは第1正規化された表から、主キーが複数項目で構成されている場合に、その一部だけに依存して決まるレコードを分けることを言います。<br/>
+                        これにより、データの重複や更新時の不整合を防ぎます。<br/>
                         
                         <a href="question02.html" class="btn" button onclick="next()">次の問題へ</a>
                     </p>
